@@ -22,8 +22,10 @@ To use WorldExporter, you will need:
 
 # FUNCTIONS
 
-The program utilizes ADB’s backup feature which allows for copying an application’s data even without root privileges. However, the exported backup file is encrypted so Android Backup Extractor is used to extract its contents into a tar archive. 7zip is then used to unarchive the tar file, and finally, the minecraftWorlds folder is moved to the WorldExporter’s directory where it can be easily accessed by the user.
+The program utilizes [ADB](http://developer.android.com/studio/command-line/adb)’s backup feature which allows for copying an application’s data even **without root** privileges. However, the exported backup file is encrypted so [Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor) is used to extract its contents into a tar archive. **7zip** is then used to unarchive the tar file, and finally, the minecraftWorlds folder is moved to the WorldExporter’s directory where it can be easily accessed by the user.
 
 The only user interaction required is the enabling of USB Debugging in Android settings. Instructions for doing this are included in the program.
 
-The code for the program is open-source and is available on **GitHub**.
+The code for the program is **open-source** and is available on **GitHub**.
+
+This fork is created by MFn.
