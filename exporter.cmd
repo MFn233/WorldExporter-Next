@@ -1,19 +1,23 @@
-:: Minecraft PE World Exporter
-:: Version 2.8
+:: Minecraft BE World Exporter
+:: Version 2.9 - fork
 ::
 :: Created by Tikolu - https://tikolu.net/world-exporter
-:: Report issues to tikolu43@gmail.com
+:: Fork by MFn - https://github.com/MFn233/WorldExporter-Next
+:: Report issues to mfn233@qq.com
 
 
 :SETUP
 @ECHO OFF
-title Minecraft PE World Exporter tool by Tikolu - Version 2.8
+title Minecraft BE World Exporter tool - Version 2.9 fork
 color 0f
 CD %~dp0
-SET heading=MCPE World Exporter by Tikolu
+SET heading=MCBE World Exporter Next - By MFn
 SET divider==================================
-SET email=tikolu43@gmail.com
-SET url=https://tikolu.net/world-exporter/logexternal.php?
+:: SET email=tikolu43@gmail.com
+SET email=mfn233@qq.com
+:: SET url=https://tikolu.net/world-exporter/logexternal.php?
+SET url=https://github.com/MFn233/WorldExporter-Next
+SET issueurl=https://github.com/MFn233/WorldExporter-Next/issues
 IF NOT EXIST "files\temp" GOTO FILEERROR
 CD files
 ECHO test>temp
@@ -43,8 +47,8 @@ GOTO INTRODUCTION
 CLS
 ECHO An error was encountered when trying to access necessary files.
 ECHO Please make sure that the ZIP file is extracted before using World Exporter.
-ECHO If you need help, please contact %email%
-CURL -s "%url%log=error&error=file"
+ECHO If you need help, please send an issue on %url%
+START %issueurl%
 ECHO.
 ECHO Press enter to exit.
 PAUSE>NUL
@@ -54,8 +58,9 @@ EXIT
 CLS
 ECHO Java was not detected on your system.
 ECHO Please make sure Java is installed.
-ECHO If you need help, please contact %email%
-CURL -s "%url%log=error&error=java"
+ECHO You can download the latest version of Java here: https://www.java.com/
+ECHO.
+ECHO If you need help, please send an issue on %issueurl%
 ECHO.
 ECHO Press enter to exit.
 PAUSE>NUL
@@ -66,6 +71,9 @@ CLS
 ECHO The "minecraftWorlds" folder inside WorldExporter's directory must be deleted (or renamed) before exporting new worlds.
 ECHO.
 ECHO Press enter to delete the folder and continue.
+ECHO.
+ECHO Attention! You still have some time to rename the old folder before pressing Enter.
+ECHO No sooner you press Enter, than your old "minecraftWorlds" folder will be deleted!!!
 PAUSE>NUL
 RMDIR "%~dp0\minecraftWorlds" /s /q
 GOTO SETUP
@@ -75,9 +83,10 @@ CLS
 ECHO Minecraft was not detected on your device.
 ECHO.
 ECHO If Minecraft is installed, this means that there is an error communicating with
-ECHO your device. Please contact my email, %email%
-CURL -s "%url%log=error&error=nominecraft"
+ECHO your device. Please send an issue on %url%
+START %issueurl%
 ECHO.
+ECHO Press enter to exit.
 PAUSE>NUL
 EXIT
 
@@ -86,11 +95,10 @@ CLS
 ECHO Something went wrong during the extraction process.
 ECHO.
 ECHO But don't give up yet!
-ECHO This might be due to a few different reasons, so email me and I will respond as soon as possible.
-ECHO My email: %email%
+ECHO This might be due to a few different reasons, so send an issue on GitHub and I will respond as soon as possible.
+START %issueurl%
 ECHO.
-CURL -s "%url%log=error&error=backup"
-ECHO Please include this information in your email:
+ECHO Please include this information in your issue:
 IF EXIST "backup.ab" ECHO backup.ab is ok
 ECHO backup size is %backupSize%
 IF EXIST "backup.tar" ECHO backup.tar is ok
@@ -101,10 +109,10 @@ EXIT
 CLS
 ECHO The backup file which has been exported is blank.
 ECHO Try restarting your device and computer, and then running WorldExporter again.
-CURL -s "%url%log=error&error=blankbackup"
 ECHO.
-ECHO If the error persists, contact %email%. You can include some diagnostic information in your email,
+ECHO If the error persists, send an issue on Github. You can include some diagnostic information in your email,
 ECHO press enter now to reveal the diagnostic information...
+START %issueurl%
 PAUSE>NUL
 CLS
 TREE backup
@@ -116,11 +124,11 @@ CLS
 ECHO Welcome to Minecraft World Exporter
 ECHO ===================================
 ECHO.
-ECHO You can use this tool to export worlds from Minecraft Pocket Edition if you have set
-ECHO your storage type to "Application" in the settings.
+ECHO You can use this tool to export worlds from Minecraft Bedrock Edition on your android device
+ECHO if you have set your storage type to "Application" in the settings.
 ECHO.
-ECHO This program was created by Tikolu. If you experience any problems during the
-ECHO process, please contact me at %email%. Documentation: tikolu.net/world-exporter
+ECHO This program was forked by MFn. If you experience any problems during the
+ECHO process, please send an issue on %url%. Documentation: https://mfn233.github.io/WorldExporter-Next/
 ECHO.
 ECHO Whenever you're ready, press enter.
 PAUSE>NUL
@@ -131,7 +139,9 @@ CLS
 ECHO %heading%
 ECHO %divider%
 ECHO.
-ECHO USB Debugging needs to be enabled for this program to connect to your device. Follow these steps:
+ECHO USB Debugging needs to be enabled for this program to connect to your device. 
+ECHO Don't worry. It does no harm to your device and can be turned off at any time.
+ECHO Follow these steps:
 ECHO.
 ECHO 1. Go to your Android device settings.
 ECHO 2. Scroll down to the bottom and click on "System" and then "About Device".
@@ -143,7 +153,8 @@ ECHO 6. Connect the device to your computer with a USB cable.
 ECHO 7. After connecting a popup will ask "Allow USB Debugging?". Tap on "Allow".
 ECHO.
 ECHO If nothing happens after pressing "Allow", you may need to install drivers for your device.
-ECHO Drivers can be downloaded from:   tikolu.net/world-exporter/download/drivers
+ECHO Drivers can be downloaded from:
+ECHO https://github.com/MFn233/WorldExporter-Next/tree/master/AndroidDriver
 adb0 wait-for-device
 GOTO BACKUP
 
@@ -162,7 +173,8 @@ ECHO %divider%
 ECHO.
 ECHO A backup request has been sent to your device. This will get Minecraft's data and move it to your computer.
 ECHO.
-ECHO Please tap on "Back up my data" to begin the backup procedure (do not enter a password).
+ECHO Please tap on "Back up my data" to begin the backup procedure. 
+ECHO (better not enter a password. If your system needs you to enter a password, please keep it in your mind)
 ECHO This might take a few minutes, depending on how many worlds you have.
 IF EXIST "backup.ab" DEL backup.ab
 IF EXIST "backup.tar" DEL backup.tar
@@ -180,7 +192,14 @@ IF EXIST "backup" RMDIR backup /s /q
 MKDIR backup
 ECHO Extracting backup file...
 IF NOT EXIST "backup.ab" GOTO BACKUPERROR
-java -jar abe.jar unpack backup.ab backup.tar
+ECHO If you entered a password when in the backup procedure, please enter it here and press Enter;
+ECHO else, do nothing just press Enter.
+ECHO.
+set password=
+set /p password=Enter the password: 
+IF DEFINED password (
+    java -jar abe.jar unpack backup.ab backup.tar %password%
+) ELSE java -jar abe.jar unpack backup.ab backup.tar
 IF NOT EXIST "backup.tar" GOTO BACKUPERROR
 ECHO Extracting archive...
 7zip x -y -obackup backup.tar>NUL
@@ -199,7 +218,7 @@ adb0 kill-server>nul
 ECHO World Export Complete!
 dir /a:d "..\minecraftWorlds" | find /c "<DIR>">temp
 SET /p worlds=<temp
-CURL -s "%url%log=success&worlds=%worlds%&source=github"
+CURL -s "%url%log=success&worlds=%worlds%"
 explorer "..\minecraftWorlds"
 GOTO END
 
@@ -213,15 +232,9 @@ ECHO You should now find a "minecraftWorlds" folder in the WorldExporter directo
 ECHO.
 ECHO Thank you for using my tool. If it helped you today, please let me know by
 ECHO emailing %email%! If you experienced any issues, errors or if
-ECHO you just have a general suggestion about the program, also let me know!
+ECHO you just have a general suggestion about the program, send an issue on %issueurl%
 ECHO.
-ECHO WorldExporter is (and always will be) a free to use project.
-ECHO However, you can support future development of WorldExporter
-ECHO by donating. Any amount will be greatly appreciated!
-ECHO.
-ECHO Information on how to donate, as well as credits, changelog,
-ECHO and other information can all be found on my website:
-ECHO https://tikolu.net/world-exporter
+ECHO WorldExporter-Next will always be a free to use project.
 ECHO.
 ECHO Press enter to exit.
 PAUSE>NUL
