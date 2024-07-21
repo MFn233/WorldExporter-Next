@@ -1,4 +1,4 @@
-Minecraft Pocket Edition gives the user a choice of where their worlds should be kept. "External" and "Application".
+The mobile version of Minecraft Bedrock Edition gives the user a choice of where their worlds should be kept. "External" and "Application".
 
 "External" saves worlds in the device storage where the user can easily transfer them to another device. "Application" stores the worlds internally in Minecraft’s private folder to which only Minecraft has access.
 
@@ -25,7 +25,5 @@ To use WorldExporter, you will need:
 The program utilizes [ADB](http://developer.android.com/studio/command-line/adb)’s backup feature which allows for copying an application’s data even **without root** privileges. However, the exported backup file is encrypted so [Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor) is used to extract its contents into a tar archive. **7zip** is then used to unarchive the tar file, and finally, the minecraftWorlds folder is moved to the WorldExporter’s directory where it can be easily accessed by the user.
 
 The only user interaction required is the enabling of USB Debugging in Android settings. Instructions for doing this are included in the program.
-
-The code for the program is **open-source** and is available on **GitHub**.
 
 This fork is created by MFn.
