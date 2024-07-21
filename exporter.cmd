@@ -47,6 +47,7 @@ GOTO INTRODUCTION
 CLS
 ECHO An error was encountered when trying to access necessary files.
 ECHO Please make sure that the ZIP file is extracted before using World Exporter.
+ECHO If the ZIP file is extracted, please try restarting your computer and your device.
 ECHO If you need help, please send an issue on %url%
 START %issueurl%
 ECHO.
@@ -174,7 +175,10 @@ ECHO.
 ECHO A backup request has been sent to your device. This will get Minecraft's data and move it to your computer.
 ECHO.
 ECHO Please tap on "Back up my data" to begin the backup procedure. 
-ECHO (better not enter a password. If your system needs you to enter a password, please keep it in your mind)
+ECHO.
+ECHO better not enter a password. 
+ECHO If your system needs you to enter a password, please enter it and keep the password in your mind
+ECHO.
 ECHO This might take a few minutes, depending on how many worlds you have.
 IF EXIST "backup.ab" DEL backup.ab
 IF EXIST "backup.tar" DEL backup.tar
@@ -192,11 +196,10 @@ IF EXIST "backup" RMDIR backup /s /q
 MKDIR backup
 ECHO Extracting backup file...
 IF NOT EXIST "backup.ab" GOTO BACKUPERROR
-ECHO If you entered a password when in the backup procedure, please enter it here and press Enter;
-ECHO else, do nothing just press Enter.
 ECHO.
+ECHO Don't enter anything if you did't set a password!
 set password=
-set /p password=Enter the password: 
+set /p password=Password: 
 IF DEFINED password (
     java -jar abe.jar unpack backup.ab backup.tar %password%
 ) ELSE java -jar abe.jar unpack backup.ab backup.tar
