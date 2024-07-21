@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MCPE WorldExporter fork by MFn</title>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="WorldExporter allows you to export worlds from Minecraft Pocket Edition if your Storage Type is set to Application in Minecraft Settings.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#4682b4">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=block" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2 class="center">ANDROID MINECRAFT BEDROCK EDITION <span>WORLD EXPORTER</span></h2>
+    <p class="center">Created by Tikolu - <a href="https://tikolu.net">tikolu.net</a></p>
+    <p class="center">Forked by MFn - <a href="https://github.com/MFn233/WorldExporter-Next">github.com/MFn233/WorldExporter-Next</a></p>
+    <p class="center">Latest version: 2.9 <span>(released on 2024/7/22)</span></p>
+    <br>
+
+    <hr>
+    <p>the mobile version of Minecraft Bedrock Edition gives the user a choice of where their worlds should be kept. <b>"External"</b> and
+        <b>"Application"</b>.</p>
+    <p>"External" saves worlds in the device storage where the user can easily transfer them to another device.
+        "Application" stores the worlds internally in Minecraft's private folder to which <b>only Minecraft has access</b>.</p>
+    <br>
+    <p>Many people believe that rooting device is the only method of exporting worlds saved under "Application".
+        <b>However, this is not true!</b></p>
+    <p>You can use this program to export worlds from Android Minecraft Bedrock Edition if your "Storage Type" is set to
+        "Application" in Minecraft Settings. The whole process is very simple and can be finished in under five minutes.
+        <b>Your device does NOT need to be rooted!</b></p>
+
+    <hr>
+    <h4>CONTENTS</h4>
+    <ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#credits">Credits</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+    </ul>
+
+    <hr>
+    <h4 id="requirements">REQUIREMENTS</h4>
+    <p>To use WorldExporter, you will need:</p>
+    <ul>
+        <li>A computer running <b>Windows</b></li>
+        <li><b>Java</b> installed on the Computer</li>
+        <li>A <b>USB Cable</b> to connect to your phone / tablet</li>
+        <li>About <b>five minutes</b> and <b>some patience</b></li>
+    </ul>
+
+    <hr>
+    <h4 id="functions">FUNCTIONS</h4>
+    <p>The program utilizes <a href="http://developer.android.com/studio/command-line/adb">ADB</a>'s backup feature
+        which allows for copying an application's data even without root privileges. However, the exported backup file
+        is encrypted so <a href="http://github.com/nelenkov/android-backup-extractor">Android Backup Extractor</a> is
+        used to extract its contents into a tar archive. 7zip is then used to unarchive the tar file, and finally, the
+        minecraftWorlds folder is moved to the WorldExporter's directory where it can be easily accessed by the user.
+    </p>
+    <p>The only user interaction required is the enabling of USB Debugging in Android settings. Instructions for doing
+        this are included in the program.</p>
+    <p>The code for the original program is open-source and is available on <a
+            href="https://github.com/Tikolu/WorldExporter">GitHub</a>.</p>
+    <p>Meanwhile, the code of this fork version is also open-source and is available on <a 
+            href="https://github.com/MFn233/WorldExporter-Next">GitHub</a>.</p>
+
+    <hr>
+    <h4 id="download">DOWNLOAD</h4>
+    <p>The latest version can be downloaded from the GitHub repo:</p>
+    <p class="center"><a href="https://github.com/MFn233/WorldExporter-Next/releases" download><b>WorldExporter-Next</b></a></p>
+    <br>
+    <p>Find the latest release, and then download <b>"world-exporter.zip"</b> file.</p>
+    <p>After downloading, first open and extract the ZIP file, then run "exporter.cmd".</p>
+    <p>Java needs to be installed for World Exporter to function. Java can be downloaded from <a
+            href="https://java.com/download">here</a>.</p>
+    <p>To download older versions of WorldExporter, please see the <a href="#changelog">changelog</a>. Keep in mind that
+        some of these may no longer function correctly.</p>
+
+    <hr>
+    <h4 id="credits">CREDITS</h4>
+
+    <p>- MCPE World Exporter</p>
+    <p class="credit">Originally Created by Tikolu (<a href="https://tikolu.net">website</a>)</p>
+
+    <p>- Help and error testing</p>
+    <p class="credit">Provided by Cory Rankin (<a href="https://github.com/schmug">github</a>)</p>
+
+    <p>- Android Debug Bridge</p>
+    <p class="credit">Created by Google (<a href="http://developer.android.com/studio/command-line/adb">download</a>)
+    </p>
+
+    <p>- Google USB Driver for Windows</p>
+    <p class="credit">Created by Google (<a href="http://developer.android.com/studio/run/win-usb">download</a>)</p>
+
+    <p>- Android Backup Extractor</p>
+    <p class="credit">Created by Nikolay Elenkov (<a
+            href="http://github.com/nelenkov/android-backup-extractor">github</a>)</p>
+
+    <p>- 7zip</p>
+    <p class="credit">Created by Igor Pavlov (<a href="https://7-zip.org">website</a>)</p>
+
+    <p>- Tutorial videos</p>
+    <p class="credit">English tutorial PeppPizza (<a
+            href="https://youtube.com/channel/UCKT63mlyoxjly5U1MwYkRrA">youtube</a>)<br></p>
+    <p class="credit">Spanish tutorial by EL GATO MINECRAFT (<a
+            href="https://youtube.com/channel/UC29sL78ZKx_VZIwsVUHtECg">youtube</a>)</p>
+    <p class="credit">French tutorial by Mr.Blaster G (<a
+            href="https://youtube.com/channel/UCMcz-mFzzbK3tONJS9gVu6A">youtube</a>)</p>
+    <p class="credit">Russian tutorial by Sugneg (<a
+            href="https://youtube.com/channel/UC56_M9Vc6-eO6gUdjdEnIgg">youtube</a>)</p>
+    <p class="credit">Portuguese (Brazil) tutorial by Jackson Leonardo (<a
+            href="https://youtube.com/user/jack077son">youtube</a>)</p>
+    <p class="credit">Vietnamese tutorial by Rlust (<a
+            href="https://youtube.com/channel/UCUMypuIpgObPdAaXRyVMFPQ">youtube</a>)</p>
+
+    <hr>
+    <h4 id="changelog">CHANGELOG (below v2.8)</h4>
+    <p>To find the changelog of my fork version, go to <a href="https://github.com/MFn233/WorldExporter-Next/releases">here</a>.</p>
+    <p>Version 2.8 - 12021-01-01 (<a href="https://tikolu.net/world-exporter/download?version=2.8" download="">download</a>)</p>
+    <ul>
+        <li>Minecraft will now automatically be closed before exporting worlds in order to prevent corruption to worlds.
+        </li>
+        <li>WorldExporter will now activate Minecraft’s main activity before sending the backup command in order to
+            properly open the app data.</li>
+        <li>The Android Driver is no longer included with WorldExporter, but can be downloaded from <a
+                href="download/driver">here</a> if necessary.</li>
+        <li>WorldExporter will now check if the filesystem is corrupted, instead of blaming it on Java not being
+            installed.</li>
+        <li>ADB will now get restarted each time WorldExporter is run.</li>
+        <li>Additional information will now be included with the backup error, which will help with diagnosing the
+            issue.</li>
+        <li>The empty backup error will now suggest that you try restarting your device and computer. It will also
+            contain some diagnostic information about the contents of the backup.</li>
+        <li>Added information to not enter a password on the backup screen.</li>
+        <li>Added anonymous error reporting and usage statistics through cURL.</li>
+        <li>The diagnostic terminal will now include commands to stop and restart ADB.</li>
+        <li>Changed all documentation URLs included in the program from /worldExporter to /world-exporter.</li>
+    </ul>
+    <p>Version 2.7 - 12020-06-04 (<a href="https://tikolu.net/world-exporter/download?version=2.7" download="">download</a>)</p>
+    <ul>
+        <li>WorldExporter will now ensure that Java is fully operational before proceeding. Before it would only check
+            for the existence of "java.exe".</li>
+        <li>The "minecraftWorlds" folder should now actually open after extraction, instead of just showing an empty
+            command prompt window.</li>
+        <li>The diagnostic terminal now contains a choice of frequently used commands, which allows for an easier and
+            faster diagnosis without entering long commands.</li>
+        <li>Added information on how to skip the Driver Installation if it has already been done before.</li>
+        <li>When starting WorldExporter, the heading incorrectly said "Internal World Exporter". This has now been
+            changed to "Minecraft World Exporter".</li>
+        <li>Small grammar changes to the "Files Missing" error, the extraction process and the end information.</li>
+    </ul>
+    <p>Version 2.6 - 12020-04-16 (<a href="https://tikolu.net/world-exporter/download?version=2.6" download="">download</a>)</p>
+    <ul>
+        <li>Fixed a bug which, on certain systems, showed an error when trying to automatically open the worlds folder
+            after extraction.</li>
+        <li>The diagnostic terminal will now include information explaining its purpose.</li>
+        <li>Changes to the window title.</li>
+        <li>All additional CMD files should now contain the new URL to the Tikolu Website.</li>
+    </ul>
+    <p>Version 2.5 - 12020-04-05 (<a href="https://tikolu.net/world-exporter/download?version=2.5" download="">download</a>)</p>
+    <ul>
+        <li>Exported worlds will now be saved into WorldExporter’s directory instead of the desktop.</li>
+        <li>Permission to write files to the desktop is no longer required, meaning that the program can now run without
+            Administrator privileges.</li>
+    </ul>
+    <p>Version 2.4 - 12019-11-18 (<a href="https://tikolu.net/world-exporter/download?version=2.4" download="">download</a>)</p>
+    <ul>
+        <li>Changed all Tikolu Website URLs to the new domain.</li>
+        <li>Added donation information to the program itself.</li>
+    </ul>
+    <p>Version 2.3 - 12019-09-15 (<a href="https://tikolu.net/world-exporter/download?version=2.3" download="">download</a>)</p>
+    <ul>
+        <li>ADB will now get properly initialized using the start-server command.</li>
+        <li>ADB will now get properly turned off after worlds are exported using the kill-server command.</li>
+        <li>Added a new error message for when the Desktop is inaccessible due to permission errors.</li>
+    </ul>
+    <p>Version 2.2 - 12019-08-04</p>
+    <ul>
+        <li>Fixed a bug which caused files to be inaccessible when running World Exporter with administrator privileges.
+        </li>
+        <li>All required 7zip DLLs will now be included in the files folder.</li>
+    </ul>
+    <p>Version 2.1 - 12019-08-03 (<a href="https://tikolu.net/world-exporter/download?version=2.1" download="">download</a>)</p>
+    <ul>
+
+        <li>Changes to all error messages</li>
+        <li>Ignoring the "Minecraft Not Installed" error is no longer an option.</li>
+        <li>Some unnecessary confirmation messages will no longer be shown during world extraction.</li>
+        <li>Download now also available from Tikolu website.</li>
+    </ul>
+    <p>Version 2.0 - 12019-07-11 (<a href="https://tikolu.net/world-exporter/download?version=2.0" download="">download</a>)</p>
+    <ul>
+        <li><b>Special thanks to Cory Rankin for his help with the development of this update.</b></li>
+        <li>Project will now be available on GitHub.</li>
+        <li>Added diagnostic Terminal tool in files folder.</li>
+        <li>Errors no longer have red text.</li>
+        <li>WorldExporter will now offer to delete the world folder from the desktop if a conflict is detected.</li>
+        <li>Changes to the "Minecraft Not Installed" error message.</li>
+        <li>The "Backup Error" message will now be more friendly.</li>
+        <li>The worlds folder will automatically open after extraction.</li>
+        <li>Messages displayed during the extraction process will make more sense.</li>
+        <li>The user will now be informed when they can disconnect their device.</li>
+    </ul>
+    <p>Version 1.7 - 12019-07-10 (<a href="https://tikolu.net/world-exporter/download?version=1.7" download="">download</a>)</p>
+    <ul>
+
+        <li>Java Runtime will no longer be included with WorldExporter.</li>
+        <li>An error will now display if Java is not installed.</li>
+        <li>A message will be displayed while ADB is initializing.</li>
+        <li>Self extracting EXE archives will no longer be available as they proved to be too problematic.</li>
+    </ul>
+    <p>Version 1.6 - 12019-07-07 (<a href="https://tikolu.net/world-exporter/download?version=1.6" download="">download</a>)</p>
+    <ul>
+        <li>The default download method will now be ZIP because self extracting EXE archives were too problematic.</li>
+        <li>A few ADB related bugs have been fixed.</li>
+    </ul>
+    <p>Version 1.5 - 10219-02-21 (<a href="https://tikolu.net/world-exporter/download?version=1.5" download="">download</a>)</p>
+    <ul>
+        <li>World Exporter will now check for necessary files before download.</li>
+    </ul>
+    <p>Version 1.4 - 12018-12-30 (<a href="https://tikolu.net/world-exporter/download?version=1.4" download="">download</a>)</p>
+    <ul>
+        <li>Added option to skip Minecraft installation check for devices which do not respond to ADB’s path command
+            correctly.</li>
+    </ul>
+    <p>Version 1.3 - 12018-12-06</p>
+    <ul>
+        <li>Added error message when attempting to export worlds from an empty Minecraft backup.</li>
+        <li>WorldExporter will now check if the minecraftWorlds folder exists before attempting to move it to the
+            Desktop.</li>
+        <li>Added links to documentation inside of WorldExporter.</li>
+        <li>Online documentation will now open instead of the credits.</li>
+    </ul>
+    <p>Version 1.2 - 12018-12-05</p>
+    <ul>
+        <li>Instructions will skip if WorldExporter detects an already connected device.</li>
+        <li>Extraction will cancel if a worlds folder already exists on desktop to avoid errors.</li>
+        <li>WorldExporter will check if Minecraft is present on the device before initiating extraction.</li>
+        <li>WorldExporter will now detect if backup was cancelled by the user or if a Desktop Backup Password was
+            incorrectly entered.</li>
+    </ul>
+    <p>Version 1.1 - 12018-12-04</p>
+    <ul>
+        <li>Simplified included instructions.</li>
+        <li>Fixed various grammar and spelling mistakes.</li>
+        <li>Steps which were unnecessarily divided were joined up.</li>
+    </ul>
+    <p>Version 1.0 - 12018-12-03</p>
+    <ul>
+        <li>Original Release</li>
+    </ul>
+    <br>
+    <p class="small">Tikolu,WorldExporter and this fork version are neither endorsed nor affiliated with Minecraft, Mojang Studios or
+        Microsoft in any way.</p>
+
+</body>
+
+</html>
